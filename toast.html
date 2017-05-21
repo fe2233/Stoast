@@ -6,29 +6,61 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta content="width=device-width,user-scalable=no,initial-scale=1.0" name="viewport">
 	
-	<style type="text/css">
-		body { margin:0; padding:0; background-color:#eee;}
-		.click { padding:10px 20px; background-color:#E09A16; color:#FFFFFF; border-radius:5px; cursor:pointer; display:inline-block; margin:30px;}
-	</style>
-	
+	<link rel="stylesheet" href="css/bootstrap.css"/>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/toast.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			var drawToast = toast({
-				"backgroundColor":"rgba(0, 0, 0, 0.8)",
-				"color":"#eee"
-			});
+			var drawToast = toast();
 			
-			var obj = document.getElementsByClassName("click")[0];
+			var obj = document.getElementsByClassName("show-toast")[0];
 			obj.addEventListener("click", function(event) {
-				drawToast("123");
+				drawToast();
 			});
 		});
 	</script>
+	<style type="text/css">
+		.radio { margin-left:20px;}
+		.toast-success { background-color:#51A351;}
+		.toast-info { background-color:#2F96B4;}
+		.toast-warning { background-color:#F89406;}
+		.toast-error { background-color:#BD362F;}
+		.toast { width:400px; font-size:14px; color:#fff; padding:15px 15px 15px 50px; box-sizing:border-box; position:absolute; left:50%; margin-left:-200px; bottom:40px; background-repeat:no-repeat; background-position:15px center; border-radius:3px; box-shadow:0px 0px 12px #999; opacity:0.8;}
+		.toast-title { font-weight:bold;}
+		.toast>p { word-wrap:break-word;}
+	</style>
 </head>
   
-<body>
-	<div class="click">toast</div>
+<body class="container">
+	<h1 class="text-center">toast demo</h1>
+	<div class="well row col-md-10 col-md-offset-1">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" class="form-control" id="title" placeholder="title" value="test"/>
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea type="text" class="form-control" id="message" placeholder="message">testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</textarea>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<label>Toast type</label>
+					<label class="radio"><input type="radio" value="0" name="type" checked="checked"/>success</label>
+					<label class="radio"><input type="radio" value="1" name="type"/>info</label>
+					<label class="radio"><input type="radio" value="2" name="type"/>warning</label>
+					<label class="radio"><input type="radio" value="3" name="type"/>error</label>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<label for="timeout">Timeout</label>
+				<input type="number" class="form-control" id="timeout" placeholder="timeout" value="3000"/>
+			</div>
+		</div>
+		<button class="show-toast btn btn-primary">show toast</button>
+	</div>
 </body>
 </html>
