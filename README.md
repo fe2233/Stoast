@@ -1,4 +1,5 @@
-# toast
-a toast plugin
+# Jquery toast
 
-[demo](https://fe2233.github.io/toast/toast.html)
+A toast plugin which can set title, message, toast type and timeout.
+
+[deeemo](https://fe2233.github.io/toast/toast.html)
