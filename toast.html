@@ -7,19 +7,6 @@
 	<meta content="width=device-width,user-scalable=no,initial-scale=1.0" name="viewport">
 	
 	<link rel="stylesheet" href="css/bootstrap.css"/>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/toast.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			var drawToast = toast();
-			
-			var obj = document.getElementsByClassName("show-toast")[0];
-			obj.addEventListener("click", function(event) {
-				drawToast();
-			});
-		});
-	</script>
 	<style type="text/css">
 		.radio { margin-left:20px;}
 		.toast-success { background-color:#51A351;}
@@ -62,5 +49,19 @@
 		</div>
 		<button class="show-toast btn btn-primary">show toast</button>
 	</div>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/toast.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			var drawToast = toast();
+			
+			var obj = document.getElementsByClassName("show-toast")[0];
+			obj.addEventListener("click", function(event) {
+				drawToast();
+			});
+		});
+	</script>
 </body>
 </html>
